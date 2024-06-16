@@ -1,0 +1,102 @@
+body {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    overflow: hidden
+}
+
+img.fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz a imagem cobrir a área */
+    z-index: -1;
+    /* Coloca a imagem atrás de qualquer outro conteúdo */
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+
+}
+
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+    border-radius: 5px;
+
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(245, 128, 128);
+    border-radius: 5px;
+    transition: all 400ms ease;
+}
+
+.front {
+
+    transform: rotateY(180deg);
+
+}
+
+.back {
+    background-image: url("../images/back.jpeg");
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disables-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}
+
+
+main,h1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 0px;
+    color: rgb(255, 67, 67);
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    color: rgb(255, 67, 67);
+    background-color: rgb(255, 67, 67); /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input:hover {
+    background-color: rgb(200, 50, 50); /* Cor do botão ao passar o mouse */
+}
